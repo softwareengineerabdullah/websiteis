@@ -16,7 +16,8 @@ export default async function ProjectDetailPage({ params }: Props) {
     const { id } = await params;
 
     // Dynamically import prisma to ensure it runs ONLY at runtime, not build time
-    const { prisma } = await import('@/lib/prisma');
+    const { getPrisma } = await import('@/lib/prisma');
+    const prisma = getPrisma();
 
     const project = await (prisma.project as any).findUnique({
         where: { id },
