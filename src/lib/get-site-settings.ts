@@ -1,7 +1,8 @@
-import { prisma } from '@/lib/prisma';
+import { getPrisma } from '@/lib/prisma';
 
 export async function getSiteSettings() {
     try {
+        const prisma = getPrisma();
         const settings = await prisma.siteSettings.findFirst();
 
         // Return default values if no settings found
