@@ -12,6 +12,9 @@ type Props = {
     params: Promise<{ id: string }>;
 };
 
+// Prevent build-time static generation to avoid DB connection errors during build
+export const dynamic = 'force-dynamic';
+
 export default async function ProjectDetailPage({ params }: Props) {
     const { id } = await params;
 
