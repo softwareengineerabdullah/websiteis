@@ -1,13 +1,10 @@
-import { prisma } from '@/lib/prisma';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, Tag } from 'lucide-react';
 
-// Correctly typing params for Next.js 15+ (can be async or sync depending on version, 
-// but often params is a promise in recent canary versions or just an object. 
-// Standard safe way:
+// Correctly typing params for Next.js 15+
 type Props = {
     params: Promise<{ id: string }>;
 };
@@ -17,6 +14,9 @@ export const dynamic = 'force-dynamic';
 
 export default async function ProjectDetailPage({ params }: Props) {
     const { id } = await params;
+
+    // Dynamically import prisma to ensure it runs ONLY at runtime, not build time
+    const { prisma } = await import('@/lib/prisma');
 
     const project = await (prisma.project as any).findUnique({
         where: { id },
