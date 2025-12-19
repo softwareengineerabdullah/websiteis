@@ -1,0 +1,52 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  /* Brand Colors */
+  --navy: #0f172a;
+  --soft-white: #f8f9fb;
+  --accent-blue: #3b82f6;
+
+  /* Pastels */
+  --pastel-yellow: #fff4ce;
+  --pastel-blue: #eaf6ff;
+  --pastel-green: #dcfce7;
+
+  /* Neutrals */
+  --stroke: #e5e7eb;
+  --text-gray: #6b7280;
+
+  /* Default Theme Mapping */
+  --background: var(--soft-white);
+  --foreground: var(--navy);
+}
+
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-navy: var(--navy);
+  --color-soft-white: var(--soft-white);
+  --color-accent-blue: var(--accent-blue);
+
+  --color-pastel-yellow: var(--pastel-yellow);
+  --color-pastel-blue: var(--pastel-blue);
+  --color-pastel-green: var(--pastel-green);
+
+  --color-stroke: var(--stroke);
+  --color-text-gray: var(--text-gray);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  /* Custom Shadows */
+  --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  --shadow-card: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
