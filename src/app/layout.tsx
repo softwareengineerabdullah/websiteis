@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   },
   description: "İşletmenize özel web yazılım, mobil uygulama, QR menü ve POS sistemleri. Türkiye'nin her yerine modern, hızlı ve güvenli yazılım çözümleri.",
   keywords: ["yazılım şirketi", "kafe pos sistemi", "qr menü yazılımı", "özel yazılım", "mobil uygulama geliştirme", "web tasarım", "kurumsal yazılım"],
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
   other: {
     google: "notranslate",
   },
