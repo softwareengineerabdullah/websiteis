@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google"; // Changed from Geist
 import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
@@ -31,6 +32,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans`}>
         <AuthProvider>
           {children}
+          <Analytics />
           <CookieConsent />
         </AuthProvider>
       </body>
